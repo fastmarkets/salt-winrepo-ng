@@ -8,7 +8,7 @@
 cpu-z:
   '1.74.0':
     full_name: 'CPUID CPU-Z 1.74.0'
-    installer: 'salt://win/repo-ng/cpu-z/cpu-z_1.74-setup-en.exe'
+    installer: 'salt://{{ salt["pillar.get"]("repo_binary_root", "win/repo-ng") }}/cpu-z/cpu-z_1.74-setup-en.exe'
     install_flags: '/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
     uninstaller: '{{ PROGRAM_FILES }}\CPU-Z\unins000.exe'
     uninstall_flags: '/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
@@ -17,7 +17,7 @@ cpu-z:
     reboot: False
   '1.71.1':
     full_name: 'CPUID CPU-Z 1.71.1'
-    installer: 'salt://win/repo-ng/cpu-z/cpu-z_1.71.1-setup-en.exe'
+    installer: 'salt://{{ salt["pillar.get"]("repo_binary_root", "win/repo-ng") }}/cpu-z/cpu-z_1.71.1-setup-en.exe'
     install_flags: '/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
     uninstaller: '{{ PROGRAM_FILES }}\CPU-Z\unins000.exe'
     uninstall_flags: '/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
@@ -26,5 +26,5 @@ cpu-z:
     reboot: False
 # need to manually download from:
 # http://www.cpuid.com/softwares/cpu-z.html (ftp DL is cookie protected)
-# and place in your master's salt://win/repo-ng/cpu-z directory
+# and place in your master's salt://{{ salt["pillar.get"]("repo_binary_root", "win/repo-ng") }}/cpu-z directory
 # actual file is: cpu-z_1.71.1-setup-en.exe from ftp://ftp.cpuid.com/cpu-z/cpu-z_1.71.1-setup-en.exe
